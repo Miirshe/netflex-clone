@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+    body {
+        @apply bg-black text-white;
+    }
+}
+
+@layer components {
+    .fields {
+        @apply p-3 text-black rounded w-full border-none outline-none;
+    }
+    .btn {
+        @apply p-3 rounded w-full bg-red-500 text-white uppercase text-lg font-medium;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .bg-color {
+        background-color: #141414;
+    }
+}
