@@ -1,30 +1,14 @@
-import { useEffect, useState} from "react";
-import axios from "axios";
-import requests from "../../request";
-import { useParams } from "react-router-dom";
-import { BASE_IMAGE_URL } from "../../constants";
 import { BsFillPlusCircleFill } from "react-icons/bs";
+import { BASE_IMAGE_URL } from "../../constants";
+import { useLocation } from "react-router-dom";
 import { useMyList } from "../../reducers/My_list_context";
-const Trending_detail = () => {
-
+const Romance_detail = () => {
+	const movie = useLocation().state;
 	const { add_my_list } = useMyList();
-	const [movie, setMovies] = useState([]);
-	const {id} = useParams();
-	console.log("id : ",Number(id));
-	useEffect(() => {
-		const fetchDetailMovies = async () => {
-			const { data } = await axios.get(requests.fetchTrending);
-			const detail = data.results.find(data => {
-				return data.id === Number(id);
-			})
-			setMovies(detail);
-		}
-		return () => fetchDetailMovies();
-     }, []);
-   console.log("hi movei detail",movie);
-   const handleMovies = () => {
-	add_my_list(movie)
-}
+	const handleMovies = () => {
+		add_my_list(movie)
+	}
+
 
   return (
 	<div className="mt-36 w-[90%] mx-auto p-4">
@@ -47,11 +31,11 @@ const Trending_detail = () => {
 				<span className=" text-lg text-gray-400 capitalize space-x-1">overview : <small className="text-white ml-2">{movie?.overview}</small></span>
 				<span className=" text-lg text-gray-400 capitalize space-x-1">vote_average :<small className="text-white ml-2">{movie?.vote_average}</small></span>
 				<span className=" text-lg text-gray-400 capitalize space-x-1">vote_count :<small className="text-white ml-2">{movie?.vote_count}</small></span>
-				<BsFillPlusCircleFill size={25} className="mt-2 cursor-pointer text-white" onClick={()=>handleMovies()}/>
+				<BsFillPlusCircleFill size={25} className="mt-2 cursor-pointer text-white" onClick={() => handleMovies()} />
 			</div>
        </div>
 	</div>
   )
 }
 
-export default Trending_detail
+export default Romance_detail

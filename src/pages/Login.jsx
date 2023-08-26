@@ -7,6 +7,7 @@ import { auth } from "../lib/Firebase";
 import { useState } from "react";
 import { BiHide, BiShow } from "react-icons/bi";
 import { toast } from "react-toastify";
+import Cookies from "js-cookie";
 const Login = () => {
 
   const navigate = useNavigate();
@@ -22,13 +23,17 @@ const Login = () => {
     email : Yup.string().required("Please enter a valid email"),
     password: Yup.string().required("Please enter a valid password")
   })
-
+  const setToken = (token) => {
+    return Cookies.set("accessToken",token)
+  }
   const handleSubmit = async (values , {resetForm}) =>{
 
     try {
 
       const { email , password } = values
       const userCredentails = await signInWithEmailAndPassword(auth ,email , password);
+      console.log(userCredentails);
+      setToken(userCredentails?.user.accessToken);
       navigate("/Browse")
       toast.success("successfully Login!");
     } catch (error) {

@@ -10,10 +10,7 @@ const Comedy_movies = ({ title, url }) => {
       const { data } = await axios.get(url);
       setData(data.results);
     };
-
-    return () => {
 		Fetch_documenterie_movies();
-    };
   }, []);
   const responsive = {
     superLargeDesktop: {

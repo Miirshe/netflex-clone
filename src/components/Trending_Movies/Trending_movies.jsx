@@ -11,9 +11,8 @@ const Trending_movies = ({ title, url }) => {
       setData(data.results);
     };
 
-    return () => {
       Fetch_trending_movies();
-    };
+      
   }, []);
   const responsive = {
     superLargeDesktop: {

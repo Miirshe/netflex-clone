@@ -12,9 +12,8 @@ const Action_movies = ({ title, url }) => {
       setData(data.results);
     };
 
-    return () => {
       Fetch_action_movies();
-    };
+      
   }, []);
   const responsive = {
     superLargeDesktop: {

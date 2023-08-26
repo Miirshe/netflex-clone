@@ -46,9 +46,8 @@ const Header = () => {
 
           <div className="lg:w-[70%] flex flex-col md:flex-row justify-around items-center gap-2 space-y-2 md:space-y-0" onClick={()=>setShowMenu(!showMenu)}>
             <Link className="link_style hover:text-gray-300" to="/Browse">Home</Link>
-            <Link className="link_style hover:text-gray-300" to="/TvShows">Tv Shows</Link>
-            <Link className="link_style hover:text-gray-300" to="/Movies">Movies</Link>
-            <Link className="link_style hover:text-gray-300" to="/MyLists">My Lists</Link>
+            <Link className="link_style hover:text-gray-300" to="/All_Movies">Movies</Link>
+            <Link className="link_style hover:text-gray-300" to="/MyList">My Lists</Link>
           </div>
 
           <div className="flex flex-col md:flex-row justify-evenly items-center gap-3 space-y-2 md:space-y-0 p-1">

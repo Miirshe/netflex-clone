@@ -12,9 +12,8 @@ const Top_Rate_Movies = ({ title, url }) => {
       setData(data.results);
     };
 
-    return () => {
       Fetch_top_rates_movies();
-    };
+      
   }, []);
   const responsive = {
     superLargeDesktop: {

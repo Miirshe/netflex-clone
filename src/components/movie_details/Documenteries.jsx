@@ -3,7 +3,11 @@ import axios from "axios";
 import requests from "../../request";
 import { useParams } from "react-router-dom";
 import { BASE_IMAGE_URL } from "../../constants";
+import { BsFillPlusCircleFill } from "react-icons/bs";
+import { useMyList } from "../../reducers/My_list_context";
 const Documenteries = () => {
+
+	const { add_my_list } = useMyList();
 	const [movie, setMovies] = useState([]);
 	const {id} = useParams();
 	console.log("id : ",Number(id));
@@ -18,6 +22,12 @@ const Documenteries = () => {
 		return () => fetchDetailMovies();
      }, []);
    console.log("hi movei detail",movie);
+
+   const handleMovies = () => {
+
+	add_my_list(movie)
+
+}
 
   return (
 	<div className="mt-36 w-[90%] mx-auto p-4">
@@ -40,7 +50,7 @@ const Documenteries = () => {
 				<span className=" text-lg text-gray-400 capitalize space-x-1">overview : <small className="text-white ml-2">{movie?.overview}</small></span>
 				<span className=" text-lg text-gray-400 capitalize space-x-1">vote_average :<small className="text-white ml-2">{movie?.vote_average}</small></span>
 				<span className=" text-lg text-gray-400 capitalize space-x-1">vote_count :<small className="text-white ml-2">{movie?.vote_count}</small></span>
-
+				<BsFillPlusCircleFill size={25} className="mt-2 text-white cursor-pointer" onClick={()=>handleMovies()} />
 			</div>
        </div>
 	</div>

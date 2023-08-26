@@ -12,9 +12,9 @@ const Romance_movies = ({ title, url }) => {
       setData(data.results);
     };
 
-    return () => {
+
 		Fetch_romance_movies();
-    };
+    
   }, []);
   const responsive = {
     superLargeDesktop: {
