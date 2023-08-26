@@ -1,8 +1,11 @@
-# React + Vite
+netflex-clone building reactjs , database using firebase , and also use best user form validation Formik and also uses redux state management like RTKquery to validate users
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+/Home Page
+![image](https://github.com/Miirshe/netflex-clone/assets/126691024/4540c9fb-317d-4a74-98f1-442bf2cdd86e)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+/ Browse Page
+
+
+![image](https://github.com/Miirshe/netflex-clone/assets/126691024/0e455d33-4812-425c-babc-3e1f2f97d1ed)
