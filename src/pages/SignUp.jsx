@@ -21,6 +21,10 @@ const SignUp = () => {
   const validationSchema = Yup.object({
     email : Yup.string().required("Please enter a valid email"),
     password: Yup.string().required("Please enter a valid password")
+    .matches(/[a-z]/,'password at least one small letter is required')
+    .matches(/[A-Z]/,'password at least one capital letter is required')
+    .matches(/[0-9]/,'password at least one Number is required')
+    .min(8,'password must be less than 8 characters')
   })
 
   const handleSubmit = async (values , {resetForm}) =>{

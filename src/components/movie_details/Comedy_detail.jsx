@@ -19,7 +19,7 @@ const Comedy_detail = () => {
 			})
 			setMovies(detail);
 		}
-		return () => fetchDetailMovies();
+		fetchDetailMovies();
      }, []);
 
    const handleMovies = () => {

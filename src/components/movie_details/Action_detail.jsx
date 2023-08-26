@@ -18,7 +18,7 @@ const Action_detail = () => {
 			})
 			setMovies(detail);
 		}
-		return () => fetchDetailMovies();
+		fetchDetailMovies();
      }, []);
    console.log("hi movei detail",movie);
 
